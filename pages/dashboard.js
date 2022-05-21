@@ -93,7 +93,7 @@ export default function Dashboard({ blogs }) {
     }
 
     return (
-        <div className="pt-5 relative space-y-8 pb-4">
+        <div className="pt-5 relative space-y-8 border-b-red-200">
 
 
             <div className="md:text-right text-center mb-3 relative">
@@ -127,7 +127,7 @@ export default function Dashboard({ blogs }) {
                         <TextField required defaultValue={blog.tag} label="Tag" onChange={(e) => setTag(e.target.value)} fullWidth={true} className='mt-3' />
                         <TextField value={blog.date} fullWidth={true} label="Posting Date" className='mt-3' />
 
-                        <div className='mt-4 flex justify-around border-b-2 border-blue-400 mb-4'>
+                        <div className='mt-4 flex justify-around mb-3'>
                             <Button variant='outlined' color='secondary' onClick={() => handleEdit(blog.id, blog.title, blog.body, blog.tag)} startIcon={<SaveIcon />}>Save</Button>
                             <Button variant='outlined' color='error' onClick={() => handleDelete(blog.id)} startIcon={<DeleteSharpIcon />}>Delete</Button>
                         </div>
