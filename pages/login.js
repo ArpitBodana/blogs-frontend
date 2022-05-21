@@ -26,12 +26,12 @@ export default function Login() {
 
     }
     return (
-        <div className='text-center mt-5 relative space-y-4'>
+        <div className='text-center mt-5 relative'>
 
 
             <h4 className='font-body relative text-2xl '>SuperUser Login </h4>
 
-            <form className='mb-4 relative'>
+            <form className='mb-4 relative space-y-8'>
                 <TextField id="UserName" label="UserName" required variant="outlined" onChange={(e) => setUser(e.target.value)} className="m-4" /><br></br>
 
                 <TextField id="Password" label="Password" required type={'password'} variant="outlined" onChange={(e) => setPwd(e.target.value)} className="m-4" /><br></br>
