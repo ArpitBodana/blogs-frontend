@@ -136,22 +136,22 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </MenuItem>
                                 </span>
-                                <span className="">
+                                <span className={`${!token && 'hidden'}`}>
                                     <MenuItem onClick={handleCloseNavMenu} className={`${!token && 'hidden'}`}>
                                         <Link href={'/dashboard'}>
                                             <a>
-                                                <span className="">
+                                                <span className={`${!token && 'hidden'}`}>
                                                     <Typography textAlign="center" className='font-body'>DashBoard</Typography>
                                                 </span>
                                             </a>
                                         </Link>
                                     </MenuItem>
                                 </span>
-                                <span className="">
+                                <span className={`${!token && 'hidden'}`}>
                                     <MenuItem onClick={handleCloseNavMenu} className={`${!token && 'hidden'}`}>
 
 
-                                        <span className="">
+                                        <span className={`${!token && 'hidden'}`}>
                                             <Typography textAlign="center" className='font-body' onClick={handleLogout}>LogOut</Typography>
                                         </span>
 
@@ -205,7 +205,7 @@ const ResponsiveAppBar = () => {
                                             className={`${token && 'hidden'}`}
 
                                         >
-                                            <span className='font-body text-slate-50'>Admin</span>
+                                            <span className={`${token && 'hidden'} font-body text-slate-50`}>Admin</span>
                                         </Button>
                                     </span>
                                 </a>
@@ -220,7 +220,7 @@ const ResponsiveAppBar = () => {
                                             className={`${!token && 'hidden'}`}
 
                                         >
-                                            <span className='font-body text-slate-50'>DashBoard</span>
+                                            <span className={`${token && 'hidden'} font-body text-slate-50`}>DashBoard</span>
                                         </Button>
                                     </span>
                                 </a>
@@ -233,7 +233,7 @@ const ResponsiveAppBar = () => {
                                     className={`${!token && 'hidden'}`}
 
                                 >
-                                    <span className='font-body text-slate-50' onClick={handleLogout}>LogOut</span>
+                                    <span className={`${token && 'hidden'} font-body text-slate-50`} onClick={handleLogout}>LogOut</span>
                                 </Button>
                             </span>
 
