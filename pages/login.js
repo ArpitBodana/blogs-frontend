@@ -26,7 +26,7 @@ export default function Login() {
 
     }
     return (
-        <div className='text-center mt-5 relative'>
+        <div className='text-center mt-5 relative space-y-4'>
 
 
             <h4 className='font-body relative text-2xl '>SuperUser Login </h4>

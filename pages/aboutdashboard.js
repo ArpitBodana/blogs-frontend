@@ -90,7 +90,7 @@ export default function AboutDashboard({ bio }) {
 
 
     return (
-        <div className='relative p-2'>
+        <div className='relative p-2 space-y-4'>
 
 
             <div className="md:text-right text-center mb-3 relative">

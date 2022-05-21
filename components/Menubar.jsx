@@ -202,7 +202,7 @@ const ResponsiveAppBar = () => {
                                         <Button
                                             onClick={handleCloseNavMenu}
                                             sx={{ my: 2, color: 'info', display: 'block' }}
-
+                                            className={`${token && 'hidden'}`}
 
                                         >
                                             <span className='font-body text-slate-50'>Admin</span>
@@ -217,7 +217,7 @@ const ResponsiveAppBar = () => {
                                         <Button
                                             onClick={handleCloseNavMenu}
                                             sx={{ my: 2, color: 'info', display: 'block' }}
-
+                                            className={`${!token && 'hidden'}`}
 
                                         >
                                             <span className='font-body text-slate-50'>DashBoard</span>
@@ -230,6 +230,7 @@ const ResponsiveAppBar = () => {
                                 <Button
                                     onClick={handleCloseNavMenu}
                                     sx={{ my: 2, color: 'info', display: 'block' }}
+                                    className={`${!token && 'hidden'}`}
 
                                 >
                                     <span className='font-body text-slate-50' onClick={handleLogout}>LogOut</span>

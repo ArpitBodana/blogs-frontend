@@ -42,7 +42,7 @@ export default function Login() {
         )
     }
     return (
-        <div className='text-center mt-5 relative'>
+        <div className='text-center mt-5 relative space-y-4'>
 
             <span className='text-2xl md:text-4xl font-body relative'>Add What comes in your Mind</span>
             <form onSubmit={handleSubmit} className="mb-4 relative">

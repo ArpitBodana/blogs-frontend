@@ -93,7 +93,7 @@ export default function Dashboard({ blogs }) {
     }
 
     return (
-        <div className="pt-5">
+        <div className="pt-5 relative space-y-4">
 
 
             <div className="md:text-right text-center mb-3 relative">
