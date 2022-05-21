@@ -103,7 +103,7 @@ export default function AboutDashboard({ bio }) {
             </div>
             {bio.map(bios => {
                 return (
-                    <div key={bios.id}>
+                    <div key={bios.id} className="space-y-5">
                         <div className="space-y-5">
                             <h3 className='font-body m-2 text-2xl'>Change About</h3>
                             <TextField required color='error' label="About" multiline={true} rows={10} defaultValue={bios.aboutme} onChange={(e) => setAbout(e.target.value)} fullWidth={true} className='mt-3' />
@@ -112,7 +112,7 @@ export default function AboutDashboard({ bio }) {
                             <TextField required color='error' label="Address" multiline={true} rows={10} defaultValue={bios.address} onChange={(e) => setAddress(e.target.value)} fullWidth={true} className='mt-3' />
                             <Button variant='outlined' color='secondary' onClick={changeAddress} startIcon={<SaveIcon />}>Save</Button>
                         </div>
-                        <div className='w-56 md:w-96 space-y-5 mt-2 space-x-3 ml-2'>
+                        <div className='w-56 md:w-96 space-y-5 mt-2 space-x-3 ml-2 className="space-y-5"'>
                             <h3 className='font-body m-2 text-2xl'>Change Image</h3>
                             <Image src={bios.mypic} width={1} height={1} alt='arpitbodana' layout='responsive' priority={1} />
                             <input type='file' onChange={() => setMyImage(event.target.files[0])} className='w-44 h-9' />

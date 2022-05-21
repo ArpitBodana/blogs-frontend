@@ -93,20 +93,20 @@ export default function Dashboard({ blogs }) {
     }
 
     return (
-        <div className="pt-5 relative space-y-4">
+        <div className="pt-5 relative space-y-8">
 
 
             <div className="md:text-right text-center mb-3 relative">
                 <span className="text-2xl md:text-4xl font-body m-3"> Admin Dashboard</span>
             </div>
 
-            <div className=' space-x-2 relative'>
+            <div className=' space-x-2 relative space-y-5'>
                 <span className='hover:bg-slate-100 cursor-pointer p-2 text-left bg-zinc-200 font-body' onClick={gotoDashborad}>Blogs</span><span className='hover:bg-slate-100 cursor-pointer p-2 text-left font-body ' onClick={gotoAboutDashboard} >About</span>
                 <Button variant="outlined" color='info' endIcon={<AddOutlinedIcon />} onClick={addBlog}>Blog</Button>
             </div>
             {blogs.map(blog => {
                 return (
-                    <div key={blog.id} className="text-justify pb-4 mb-4 relative">
+                    <div key={blog.id} className="text-justify pb-4 mb-4 relative space-y-5 ">
                         <TextField value={blog.id} fullWidth={true} label="Id" className='mt-3' />
                         <TextField required defaultValue={blog.title} label="Title" fullWidth={true} onChange={(e) => setTitle(e.target.value)} className='mt-3' />
 
@@ -127,7 +127,7 @@ export default function Dashboard({ blogs }) {
                         <TextField required defaultValue={blog.tag} label="Tag" onChange={(e) => setTag(e.target.value)} fullWidth={true} className='mt-3' />
                         <TextField value={blog.date} fullWidth={true} label="Posting Date" className='mt-3' />
 
-                        <div className='mt-4 flex justify-around border-b-2 border-blue-400 p-6'>
+                        <div className='mt-4 flex justify-around border-b-2 border-blue-400 p-6 space-y-5'>
                             <Button variant='outlined' color='secondary' onClick={() => handleEdit(blog.id, blog.title, blog.body, blog.tag)} startIcon={<SaveIcon />}>Save</Button>
                             <Button variant='outlined' color='error' onClick={() => handleDelete(blog.id)} startIcon={<DeleteSharpIcon />}>Delete</Button>
                         </div>

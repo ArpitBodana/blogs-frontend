@@ -29,7 +29,7 @@ export default function Login() {
         <div className='text-center mt-5 relative'>
 
 
-            <h4 className='font-body relative text-2xl '>SuperUser Login </h4>
+            <h4 className='font-body relative text-2xl mb-3'>SuperUser Login </h4>
 
             <form className='mb-4 relative space-y-8'>
                 <TextField id="UserName" label="UserName" required variant="outlined" onChange={(e) => setUser(e.target.value)} className="m-4" /><br></br>

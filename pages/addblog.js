@@ -45,7 +45,7 @@ export default function Login() {
         <div className='text-center mt-5 relative space-y-4'>
 
             <span className='text-2xl md:text-4xl font-body relative'>Add What comes in your Mind</span>
-            <form onSubmit={handleSubmit} className="mb-4 relative">
+            <form onSubmit={handleSubmit} className="mb-4 relative space-y-8">
                 <TextField required label="Title" color='warning' variant="outlined" fullWidth={true} onChange={(e) => setTitle(e.target.value)} className="mt-4" /><br></br>
 
                 <TextField required label="Body" color='warning' multiline={true} rows={10} fullWidth={true} variant="outlined" onChange={(e) => setBody(e.target.value)} className="mt-4" /><br></br>
