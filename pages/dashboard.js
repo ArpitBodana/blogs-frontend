@@ -10,23 +10,23 @@ import router from 'next/router'
 import Notificationbar from '../components/Notificationbar'
 import Image from 'next/image'
 import Restricted from '../components/Restricted';
-
+import Head from 'next/head'
 export default function Dashboard({ blogs }) {
     const [title, setTitle] = useState(null)
     const [body, setBody] = useState(null)
     const [tag, setTag] = useState(null)
     const [myimage, setMyImage] = useState(null)
     const [check, setCheck] = useState(false)
-    const [admin,setAdmin]=useState(false)
+    const [admin, setAdmin] = useState(false)
     const handleDelete = async (id) => {
         const Token = localStorage.getItem('Token')
         const response = await axios.delete(`https://chiku.pythonanywhere.com/blogs/${id}`, { headers: { 'Authorization': `Token ${Token}` } })
         const data = await response.data
         window.location.reload()
     }
-    
-    useEffect(()=>{
-        {localStorage.getItem('Token') && setAdmin(true) }
+
+    useEffect(() => {
+        { localStorage.getItem('Token') && setAdmin(true) }
     })
 
     const changePic = async (myid) => {
@@ -85,16 +85,32 @@ export default function Dashboard({ blogs }) {
     }
 
 
-    
-    if(!admin){
-        return(
-            <Restricted/>
+
+    if (!admin) {
+        return (
+            <div>
+                <Head>
+                    <title>Restricted Area</title>
+                    <meta name="description" content="Restricted Area you are note allowed to see these" />
+                    <link rel="icon" href="/favicon.ico" />
+                    <Restricted />
+                </Head>
+
+            </div>
         )
     }
 
     return (
         <div className="pt-5 relative space-y-8 border-b-red-200">
+            <div>
+                <Head>
+                    <title>Dashboard</title>
+                    <meta name="description" content="Admin Dashboard " />
+                    <link rel="icon" href="/favicon.ico" />
+                    <Restricted />
+                </Head>
 
+            </div>
 
             <div className="md:text-right text-center mb-3 relative">
                 <span className="text-2xl md:text-4xl font-body m-3"> Admin Dashboard</span>

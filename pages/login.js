@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button } from '@mui/material';
 import { useRouter } from 'next/router'
 import Notificationbar from '../components/Notificationbar'
-
+import Head from 'next/head'
 
 export default function Login() {
     const [user, setUser] = useState('')
@@ -27,7 +27,11 @@ export default function Login() {
     }
     return (
         <div className='text-center mt-5 relative'>
-
+            <Head>
+                <title>Admin Login</title>
+                <meta name="description" content="Admin Login Page"/>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
             <h4 className='font-body relative text-2xl mb-3'>SuperUser Login </h4>
 

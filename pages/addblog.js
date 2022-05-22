@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { TextField } from '@mui/material';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
 import Restricted from '../components/Restricted';
-
+import Head from 'next/head'
 
 
 export default function Login() {
@@ -11,38 +11,52 @@ export default function Login() {
     const [body, setBody] = useState('')
     const [tag, setTag] = useState('')
     const [myimage, setMyImage] = useState(null)
-    const [admin,setAdmin]=useState(false)
+    const [admin, setAdmin] = useState(false)
     const handleSubmit = async () => {
         if (myimage == null) {
             const Token = localStorage.getItem('Token')
             const response = await axios.post("https://chiku.pythonanywhere.com/blogs/", { title: title, body: body, tag: tag }, { headers: { 'Authorization': `Token ${Token}` } })
             const data = await response.data
 
-        }else{
+        } else {
             const Token = localStorage.getItem('Token')
             const fd = new FormData()
             fd.append('image', myimage, myimage.name)
-            fd.append('title',title)
+            fd.append('title', title)
             fd.append('body', body)
-            fd.append('tag',tag)
-            const response = await axios.post("https://chiku.pythonanywhere.com/blogs/",fd, { headers: { 'Authorization': `Token ${Token}` } })
+            fd.append('tag', tag)
+            const response = await axios.post("https://chiku.pythonanywhere.com/blogs/", fd, { headers: { 'Authorization': `Token ${Token}` } })
             const data = await response.data
             console.log(data);
 
         }
 
     }
-    useEffect(()=>{
-        {localStorage.getItem('Token') && setAdmin(true) }
+    useEffect(() => {
+        { localStorage.getItem('Token') && setAdmin(true) }
     })
 
-    if(!admin){
-        return(
-            <Restricted/>
+    if (!admin) {
+        return (
+            <div>
+                <Head>
+                    <title>Restricted Area</title>
+                    <meta name="description" content="Restricted Area you are note allowed to see these" />
+                    <link rel="icon" href="/favicon.ico" />
+                    <Restricted />
+                </Head>
+
+            </div>
+
         )
     }
     return (
         <div className='text-center mt-5 relative space-y-4'>
+            <Head>
+                <title>Add Blog</title>
+                <meta name="description" content="Section of Make Difference" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
             <span className='text-2xl md:text-4xl font-body relative'>Add What comes in your Mind</span>
             <form onSubmit={handleSubmit} className="mb-4 relative space-y-8">

@@ -4,11 +4,11 @@ import router from 'next/router'
 import axios from 'axios'
 import Image from 'next/image'
 import { TextField } from '@mui/material';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SaveIcon from '@mui/icons-material/Save';
 import Notificationbar from '../components/Notificationbar'
 import Restricted from '../components/Restricted';
-
+import Head from 'next/head'
 
 export default function AboutDashboard({ bio }) {
 
@@ -16,7 +16,7 @@ export default function AboutDashboard({ bio }) {
     const [address, setAddress] = useState(null)
     const [myimage, setMyImage] = useState(null)
     const [check, setCheck] = useState(false)
-    const [admin,setAdmin]=useState(false)
+    const [admin, setAdmin] = useState(false)
 
     const gotoDashborad = () => {
         router.push('/dashboard')
@@ -78,20 +78,33 @@ export default function AboutDashboard({ bio }) {
 
     }
 
-    useEffect(()=>{
-        {localStorage.getItem('Token') && setAdmin(true) }
+    useEffect(() => {
+        { localStorage.getItem('Token') && setAdmin(true) }
     })
 
-    if(!admin){
-        return(
-            <Restricted/>
+    if (!admin) {
+        return (
+            <div>
+                <Head>
+                    <title>Restricted Area</title>
+                    <meta name="description" content="Restricted Area you are note allowed to see these" />
+                    <link rel="icon" href="/favicon.ico" />
+                    <Restricted />
+                </Head>
+
+            </div>
         )
     }
 
 
     return (
         <div className='relative p-2 space-y-4'>
-
+            <Head>
+                <title>Dashboard</title>
+                <meta name="description" content="Admin Dashboard " />
+                <link rel="icon" href="/favicon.ico" />
+                <Restricted />
+            </Head>
 
             <div className="md:text-right text-center mb-3 relative">
                 <span className="text-2xl md:text-4xl font-body m-3"> Admin Dashboard</span>

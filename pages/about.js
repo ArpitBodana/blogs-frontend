@@ -3,11 +3,16 @@ import Image from 'next/image'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-
+import Head from 'next/head'
 export default function AboutME({ bio }) {
     return (
         <div className='relative mt-4 p-2'>
-
+            <Head>
+                <title>Arpit Bodana</title>
+                <meta name="description" content="Arpit Bodana;s details" />
+                <link rel="icon" href="/favicon.ico" />
+                <Restricted />
+            </Head>
             <main>
                 {bio.map(bio => {
                     return (
@@ -31,7 +36,7 @@ export default function AboutME({ bio }) {
                                 <br />
 
                             </div>
-                           
+
 
                             <div>
                                 <p className='font-body text-lg md:text-2xl'>{bio.address}</p>
