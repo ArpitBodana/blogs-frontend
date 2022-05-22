@@ -9,9 +9,8 @@ export default function AboutME({ bio }) {
         <div className='relative mt-4 p-2'>
             <Head>
                 <title>Arpit Bodana</title>
-                <meta name="description" content="Arpit Bodana;s details" />
+                <meta name="description" content="Arpit Bodana's details" />
                 <link rel="icon" href="/favicon.ico" />
-                <Restricted />
             </Head>
             <main>
                 {bio.map(bio => {
