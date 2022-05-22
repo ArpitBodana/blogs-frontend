@@ -5,7 +5,12 @@ export default function Blogbytag({ blogs }) {
 
   return (
     <main className='relative mt-4 p-2'>
-
+      <Head>
+        <title>Make Diffrence</title>
+        <meta name="description" content="Indore Blogs on IT. Sharing my personal exprience in these fild. Different IT companies exprience info and more." />
+        <meta name="google-site-verification" content="TZvzximXOO43jEFIVGoc5fb7EYmU4gzCpSNx342aWR4" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {blogs.map(blog => {
         return (
           <div key={blog.id} className="mb-4  relative">
@@ -13,7 +18,7 @@ export default function Blogbytag({ blogs }) {
               <a>
                 <h1 className="font-body text-lg md:text-2xl font-extrabold mb-2">  {blog.title}</h1>
                 {blog.image && <div className='overflow-hidden relative  place-self-center container'>
-                  <Image className='' src={blog.image} width={0.10} height={0.040}alt={blog.title} priority layout='responsive' />
+                  <Image className='' src={blog.image} width={0.10} height={0.040} alt={blog.title} priority layout='responsive' />
                 </div>}
               </a>
             </Link>

@@ -89,8 +89,8 @@ export default function AboutDashboard({ bio }) {
                     <title>Restricted Area</title>
                     <meta name="description" content="Restricted Area you are note allowed to see these" />
                     <link rel="icon" href="/favicon.ico" />
-                    <Restricted />
                 </Head>
+                <Restricted />
 
             </div>
         )
