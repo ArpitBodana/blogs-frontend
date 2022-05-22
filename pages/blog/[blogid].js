@@ -1,12 +1,13 @@
 import axios from 'axios'
 import Image from 'next/image'
+import Head from 'next/head'
 export default function BlogwithId({ blog }) {
 
     return (
         <div className='relative m-2'>
             <Head>
-                <title>${blog.title}</title>
-                <meta name="description" content={`${blog.title}`}  />
+                <title>{blog.title}</title>
+                <meta name="description" content={`${blog.title}`}/>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
