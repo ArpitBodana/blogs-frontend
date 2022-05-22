@@ -15,6 +15,7 @@ export default function AboutME({ bio }) {
                             <div>
                                 <p className='font-body text-lg md:text-2xl'>{bio.aboutme}</p>
                             </div>
+                            <h1 className='mt-3 font-time font-bold text-xl md:text-4xl relative  place-self-center'>Hi, I'm <span className='text-red-500'>Arpit Bodana</span></h1>
                             <div className='rounded-full overflow-hidden w-56 m-3 md:w-96 relative  place-self-center'>
                                 <Image src={bio.mypic} width={1} height={1} alt='arpitbodana' layout='responsive' priority />
                             </div>

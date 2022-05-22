@@ -124,12 +124,12 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </MenuItem>
                                 </span>
-                                <span className="">
+                                <span className={`${token && 'hidden'}`}>
                                     <MenuItem onClick={handleCloseNavMenu} className={`${token && 'hidden'}`} >
                                         <Link href={'/login'}>
                                             {/* {`${!user && 'hidden'}`} */}
                                             <a>
-                                                <span className="">
+                                                <span className={`${token && 'hidden'}`}>
                                                     <Typography textAlign="center" className='font-body' >Admin</Typography>
                                                 </span>
                                             </a>
