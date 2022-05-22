@@ -4,6 +4,12 @@ export default function BlogwithId({ blog }) {
 
     return (
         <div className='relative m-2'>
+            <Head>
+                <title>${blog.title}</title>
+                <meta name="description" content={`${blog.title}`}  />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+
             <div className="mb-4 relative">
                 <h1 className='font-body text-2xl md:text-4xl'>{blog.title}</h1>
                 <br></br>

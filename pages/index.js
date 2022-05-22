@@ -23,6 +23,7 @@ export default function Home({ blogs }) {
       <Head>
         <title>Make Diffrence</title>
         <meta name="description" content="Indore Blogs on IT. Sharing my personal exprience in these fild. Different IT companies exprience info and more." />
+        <meta name="google-site-verification" content="TZvzximXOO43jEFIVGoc5fb7EYmU4gzCpSNx342aWR4" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
