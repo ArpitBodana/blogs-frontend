@@ -95,6 +95,7 @@ export default function Dashboard({ blogs }) {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <Restricted />
+                
 
             </div>
         )

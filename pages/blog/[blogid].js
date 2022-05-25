@@ -7,7 +7,10 @@ export default function BlogwithId({ blog }) {
         <div className='relative m-2'>
             <Head>
                 <title>{blog.title}</title>
-                <meta name="description" content={`${blog.title}`}/>
+                <meta name="description" content={`${blog.title}`} />
+                <meta name="author" content="Arpit Bodana" />
+                <meta name="keywords" content={`${blog.title}`} />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
