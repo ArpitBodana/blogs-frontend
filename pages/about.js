@@ -6,7 +6,7 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import Head from 'next/head'
 export default function AboutME({ bio }) {
     return (
-        <div className='relative mt-4 p-2'>
+        <div className='relative mt-4 p-2 min-h-screen'>
             <Head>
                 <title>Arpit Bodana</title>
                 <meta name="description" content="Arpit Bodana's details" />
