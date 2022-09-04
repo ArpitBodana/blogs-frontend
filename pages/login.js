@@ -26,7 +26,7 @@ export default function Login() {
     }
   };
   return (
-    <div className="text-center mt-5 relative min-h-screen bg-green-400">
+    <div className="text-center mt-5 relative min-h-screen">
       <Head>
         <title>Admin Login</title>
         <meta name="description" content="Admin Login Page" />
